@@ -226,6 +226,7 @@ namespace TwitchLib.Client.Models
         {
             BotUsername = botUsername;
             UserId = userId;
+            Username = userName;
             DisplayName = displayName;
             ColorHex = colorHex;
             Color = color;
