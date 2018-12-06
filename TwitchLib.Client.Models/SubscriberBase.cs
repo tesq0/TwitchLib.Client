@@ -1,7 +1,6 @@
-
+using Splat;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using TwitchLib.Client.Enums;
 using TwitchLib.Client.Models.Internal;
@@ -18,7 +17,7 @@ namespace TwitchLib.Client.Models
         /// <summary>Property representing the colorhex of the resubscriber.</summary>
         public string ColorHex { get; }
         /// <summary>Property representing HEX color as a System.Drawing.Color object.</summary>
-        public Color Color { get; }
+        public SplatColor Color { get; }
         /// <summary>Property representing resubscriber's customized display name.</summary>
         public string DisplayName { get; }
         /// <summary>Property representing emote set of resubscriber.</summary>
@@ -171,7 +170,7 @@ namespace TwitchLib.Client.Models
             }
         }
 
-        internal SubscriberBase(List<KeyValuePair<string, string>> badges, string colorHex, Color color, string displayName, string emoteSet, string id, string login, string systemMessage,
+        internal SubscriberBase(List<KeyValuePair<string, string>> badges, string colorHex, SplatColor color, string displayName, string emoteSet, string id, string login, string systemMessage,
             string systemMessageParsed, string resubMessage, SubscriptionPlan subscriptionPlan, string subscriptionPlanName, string roomId, string userId, bool isModerator, bool isTurbo,
             bool isSubscriber, bool isPartner, string tmiSentTs, UserType userType, string rawIrc, string channel)
         {

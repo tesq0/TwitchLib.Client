@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Splat;
+using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using TwitchLib.Client.Enums;
 using TwitchLib.Client.Models.Extensions.NetCore;
@@ -219,7 +219,7 @@ namespace TwitchLib.Client.Models
             }
         }
 
-        public ChatMessage(string botUsername, string userId, string userName, string displayName, string colorHex, Color color, EmoteSet emoteSet,
+        public ChatMessage(string botUsername, string userId, string userName, string displayName, string colorHex, SplatColor color, EmoteSet emoteSet,
             string message, UserType userType, string channel, string id, bool isSubscriber, int subscribedMonthCount, string roomId, bool isTurbo, bool isModerator,
             bool isMe, bool isBroadcaster, Noisy noisy, string rawIrcMessage, string emoteReplacedMessage, List<KeyValuePair<string, string>> badges,
             CheerBadge cheerBadge, int bits, double bitsInDollars)

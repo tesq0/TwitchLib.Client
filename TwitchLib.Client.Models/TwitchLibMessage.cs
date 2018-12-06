@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using Splat;
+using System.Collections.Generic;
 using TwitchLib.Client.Enums;
 
 
@@ -13,7 +13,7 @@ namespace TwitchLib.Client.Models
         /// <summary>Twitch username of the bot that received the message.</summary>
         public string BotUsername { get; protected set;}
         /// <summary>Property representing HEX color as a System.Drawing.Color object.</summary>
-        public Color Color { get; protected set;}
+        public SplatColor Color { get; protected set;}
         /// <summary>Hex representation of username color in chat (THIS CAN BE NULL IF VIEWER HASN'T SET COLOR).</summary>
         public string ColorHex { get; protected set;}
         /// <summary>Case-sensitive username of sender of chat message.</summary>

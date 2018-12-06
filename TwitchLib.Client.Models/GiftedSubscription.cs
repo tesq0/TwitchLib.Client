@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using TwitchLib.Client.Enums;
 using TwitchLib.Client.Models.Internal;
 

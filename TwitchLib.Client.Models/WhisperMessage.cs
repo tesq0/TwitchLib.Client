@@ -1,6 +1,6 @@
+using Splat;
 using TwitchLib.Client.Models.Extensions.NetCore;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using TwitchLib.Client.Enums;
 using TwitchLib.Client.Models.Internal;
@@ -18,7 +18,7 @@ namespace TwitchLib.Client.Models
         /// <summary>Property representing identifier of the message thread.</summary>
         public string Message { get; }
 
-        public WhisperMessage(List<KeyValuePair<string, string>> badges, string colorHex, Color color, string username, string displayName, EmoteSet emoteSet, string threadId, string messageId,
+        public WhisperMessage(List<KeyValuePair<string, string>> badges, string colorHex, SplatColor color, string username, string displayName, EmoteSet emoteSet, string threadId, string messageId,
             string userId, bool isTurbo, string botUsername, string message, UserType userType)
         {
             Badges = badges;

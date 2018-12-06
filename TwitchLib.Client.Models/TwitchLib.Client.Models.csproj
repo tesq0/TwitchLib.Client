@@ -26,4 +26,7 @@
   <ItemGroup>
     <Folder Include="Interfaces\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Splat" Version="5.1.4" />
+  </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Splat;
+using System;
 using System.Collections.Generic;
-using System.Drawing;
 using TwitchLib.Client.Enums;
 using TwitchLib.Client.Events;
 using TwitchLib.Client.Models;
@@ -40,7 +40,7 @@ namespace TwitchLib.Client.Extensions
         }
 
         public static void InvokeChatCommandsReceived(this TwitchClient client, string botUsername, string userId, string userName, string displayName,
-            string colorHex, Color color, EmoteSet emoteSet, string message, UserType userType, string channel, string id, bool isSubscriber, int subscribedMonthCount,
+            string colorHex, SplatColor color, EmoteSet emoteSet, string message, UserType userType, string channel, string id, bool isSubscriber, int subscribedMonthCount,
             string roomId, bool isTurbo, bool isModerator, bool isMe, bool isBroadcaster, Noisy noisy, string rawIrcMessage, string emoteReplacedMessage,
             List<KeyValuePair<string, string>> badges, CheerBadge cheerBadge, int bits, double bitsInDollars, string commandText, string argumentsAsString,
             List<string> argumentsAsList, char commandIdentifier)
@@ -186,7 +186,7 @@ namespace TwitchLib.Client.Extensions
         }
 
         public static void InvokeMessageReceived(this TwitchClient client, string botUsername, string userId, string userName, string displayName, string colorHex,
-            Color color, EmoteSet emoteSet, string message, UserType userType, string channel, string id, bool isSubscriber, int subscribedMonthCount, string roomId, bool isTurbo,
+            SplatColor color, EmoteSet emoteSet, string message, UserType userType, string channel, string id, bool isSubscriber, int subscribedMonthCount, string roomId, bool isTurbo,
             bool isModerator, bool isMe, bool isBroadcaster, Noisy noisy, string rawIrcMessage, string emoteReplacedMessage, List<KeyValuePair<string, string>> badges,
             CheerBadge cheerBadge, int bits, double bitsInDollars)
         {
@@ -239,7 +239,7 @@ namespace TwitchLib.Client.Extensions
             client.RaiseEvent("OnModeratorsReceived", model);
         }
 
-        public static void InvokeNewSubscriber(this TwitchClient client, List<KeyValuePair<string, string>> badges, string colorHex, Color color, string displayName,
+        public static void InvokeNewSubscriber(this TwitchClient client, List<KeyValuePair<string, string>> badges, string colorHex, SplatColor color, string displayName,
             string emoteSet, string id, string login, string systemMessage, string systemMessageParsed, string resubMessage, SubscriptionPlan subscriptionPlan,
             string subscriptionPlanName, string roomId, string userId, bool isModerator, bool isTurbo, bool isSubscriber, bool isPartner, string tmiSentTs,
             UserType userType, string rawIrc, string channel)
@@ -274,7 +274,7 @@ namespace TwitchLib.Client.Extensions
             client.RaiseEvent("OnRaidNotification", model);
         }
 
-        public static void InvokeReSubscriber(this TwitchClient client, List<KeyValuePair<string, string>> badges, string colorHex, Color color, string displayName,
+        public static void InvokeReSubscriber(this TwitchClient client, List<KeyValuePair<string, string>> badges, string colorHex, SplatColor color, string displayName,
             string emoteSet, string id, string login, string systemMessage, string systemMessageParsed, string resubMessage, SubscriptionPlan subscriptionPlan,
             string subscriptionPlanName, string roomId, string userId, bool isModerator, bool isTurbo, bool isSubscriber, bool isPartner, string tmiSentTs,
             UserType userType, string rawIrc, string channel)
@@ -345,7 +345,7 @@ namespace TwitchLib.Client.Extensions
             client.RaiseEvent("OnUserTimedout", model);
         }
 
-        public static void InvokeWhisperCommandReceived(this TwitchClient client, List<KeyValuePair<string, string>> badges, string colorHex, Color color, string username, string displayName, EmoteSet emoteSet, string threadId, string messageId,
+        public static void InvokeWhisperCommandReceived(this TwitchClient client, List<KeyValuePair<string, string>> badges, string colorHex, SplatColor color, string username, string displayName, EmoteSet emoteSet, string threadId, string messageId,
             string userId, bool isTurbo, string botUsername, string message, UserType userType, string commandText, string argumentsAsString, List<string> argumentsAsList, char commandIdentifier)
         {
             var whisperMsg = new WhisperMessage(badges, colorHex, color, username, displayName, emoteSet, threadId, messageId, userId, isTurbo, botUsername, message, userType);
@@ -356,7 +356,7 @@ namespace TwitchLib.Client.Extensions
             client.RaiseEvent("OnWhisperCommandReceived", model);
         }
 
-        public static void InvokeWhisperReceived(this TwitchClient client, List<KeyValuePair<string, string>> badges, string colorHex, Color color, string username, string displayName, EmoteSet emoteSet, string threadId, string messageId,
+        public static void InvokeWhisperReceived(this TwitchClient client, List<KeyValuePair<string, string>> badges, string colorHex, SplatColor color, string username, string displayName, EmoteSet emoteSet, string threadId, string messageId,
             string userId, bool isTurbo, string botUsername, string message, UserType userType)
         {
             var model = new OnWhisperReceivedArgs()
