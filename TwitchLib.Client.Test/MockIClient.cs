@@ -25,6 +25,7 @@ namespace TwitchLib.Client.Test
         public event EventHandler<OnReconnectedEventArgs> OnReconnected;
         public event EventHandler<OnMessageThrottledEventArgs> OnMessageThrottled;
         public event EventHandler<OnWhisperThrottledEventArgs> OnWhisperThrottled;
+        public event EventHandler<OnNeedsToReconnectEventArgs> OnNeedsToReconnect;
 
         public void Close(bool callDisconnect = true)
         {

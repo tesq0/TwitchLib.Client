@@ -59,6 +59,7 @@ namespace TwitchLib.Client.Interfaces
         event EventHandler<OnWhisperThrottledEventArgs> OnWhisperThrottled;
         event EventHandler<OnErrorEventArgs> OnError;
         event EventHandler<OnReconnectedEventArgs> OnReconnected;
+        event EventHandler<OnNeedsToReconnectEventArgs> OnNeedsToReconnect;
 
         void Initialize(ConnectionCredentials credentials, string channel = null, char chatCommandIdentifier = '!', char whisperCommandIdentifier = '!', bool autoReListenOnExceptions = true);
 
